@@ -1,0 +1,29 @@
+    theme: {
+                extend: {
+                    colors: {
+                        "primary": {
+                           "DEFAULT": "#00f6ff",
+                           "light": "#8cfdff"
+                        },
+                        "background": "#020a1a",
+                        "surface": "#111928",
+                        "surface-variant": "#1d2a41",
+                        "on-surface": "#e0e6f0",
+                        "on-surface-variant": "#a0b0c0",
+                        "neon-glow": "rgba(0, 246, 255, 0.3)"
+                    },
+                    fontFamily: {
+                        "display": ["Exo 2", "sans-serif"],
+                        "body": ["Roboto Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "neon": "0 0 10px var(--tw-shadow-color), 0 0 20px var(--tw-shadow-color)",
+                    }
+                },
+            }
