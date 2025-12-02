@@ -247,3 +247,13 @@ val onCustomColor1DarkHighContrast = Color(0xFF000000)
 val customColor1ContainerDarkHighContrast = Color(0xFFB9C3D9)
 val onCustomColor1ContainerDarkHighContrast = Color(0xFF030B1B)
 
+val portfolioPrimaryColor=Color(0xFF00f6ff)
+val portfolioPrimaryLightColor=Color(0xFF8cfdff)
+val portfolioBackgroundColor=Color(0xFF020a1a)
+val portfolioSurfaceColor=Color(0xFF111928)
+val portfolioSurfaceVariantColor=Color(0xFF1d2a41)
+val portfolioOnSurfaceColor=Color(0xFFe0e6f0)
+val portfolioOnSurfaceVariantColor=Color(0xFFa0b0c0)
+val portfolioNeonGlow = Color(0x4D00F6FF)
+
+

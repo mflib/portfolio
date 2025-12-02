@@ -5,6 +5,9 @@ junit = "4.13.2"
 kotlin = "2.2.20"
 composeMaterialCoreIcons = "1.7.3"
 composeMaterialIcons = "1.7.3"
+composeWebCore = "23.10.16.1"
+coil="3.3.0"
+ktor = "3.3.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -14,7 +17,8 @@ androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecyc
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 materialIconsCore = { group = "org.jetbrains.compose.material", name = "material-icons-core", version.ref = "composeMaterialCoreIcons" }
 compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "composeMaterialIcons" }
-
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
 
 
 [plugins]

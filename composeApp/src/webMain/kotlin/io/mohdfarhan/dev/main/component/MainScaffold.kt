@@ -38,6 +38,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.mohdfarhan.dev.main.enums.Tabs
+import io.mohdfarhan.dev.main.screen.tabs.HomeTab
+import io.mohdfarhan.dev.theme.portfolioBackgroundColor
+import io.mohdfarhan.dev.theme.portfolioNeonGlow
+import io.mohdfarhan.dev.theme.portfolioOnSurfaceColor
+import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor
+import io.mohdfarhan.dev.theme.portfolioPrimaryColor
+import io.mohdfarhan.dev.theme.portfolioSurfaceVariantColor
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,18 +65,26 @@ fun MainScaffold(
                 selectedTabIndex.value = index
             }
         }
-    }, floatingActionButton = {}, bottomBar = {}) {
-        Box(modifier = Modifier.fillMaxSize()) {
-            when (Tabs.entries[selectedTabIndex.value]) {
-                Tabs.Home -> {}
-                Tabs.Skills -> {}
-                Tabs.Projects -> {}
-                Tabs.Experience -> {}
-                Tabs.OpenSource -> {}
-                Tabs.Contact -> {}
-                Tabs.Resume -> {}
+    }, floatingActionButton = {}, bottomBar = {}){
+        paddingValues ->
+            Box(
+                modifier = Modifier
+                    .padding(paddingValues = paddingValues)
+                    .fillMaxSize()
+                    .background(color = portfolioBackgroundColor)
+            ) {
+                when (Tabs.entries[selectedTabIndex.value]) {
+                    Tabs.Home -> {
+                        HomeTab()
+                    }
+                    Tabs.Skills -> {}
+                    Tabs.Projects -> {}
+                    Tabs.Experience -> {}
+                    Tabs.OpenSource -> {}
+                    Tabs.Contact -> {}
+                    Tabs.Resume -> {}
+                }
             }
-        }
     }
 }
 
@@ -81,7 +96,7 @@ fun HeaderStyledTopAppBar(
     onTabSelected: (Int) -> Unit
 ) {
     Surface(
-        color = MaterialTheme.colorScheme.surface,
+        color = portfolioBackgroundColor,
     ) {
         Column {
             Row(
@@ -104,8 +119,8 @@ fun HeaderStyledTopAppBar(
                         Text(
                             text = tab.text,
                             style = MaterialTheme.typography.titleMedium,
-                            color = if (isSelected) MaterialTheme.colorScheme.primary
-                            else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
+                            color = if (isSelected) portfolioPrimaryColor
+                            else portfolioOnSurfaceVariantColor,
                             fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Medium,
                             modifier = Modifier.clip(RoundedCornerShape(8.dp))
                                 .clickable { onTabSelected(index) }
@@ -115,7 +130,7 @@ fun HeaderStyledTopAppBar(
                                 .then(
                                     if (isSelected) {
                                         Modifier.background(
-                                            color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
+                                            color = portfolioNeonGlow.copy(alpha = 0.2f),
                                             shape = RoundedCornerShape(8.dp)
                                         ).padding(vertical = 8.dp, horizontal = 8.dp)
                                     } else Modifier
@@ -137,9 +152,9 @@ fun HeaderStyledTopAppBar(
             }
 
             HorizontalDivider(
-                modifier = Modifier.fillMaxWidth(),
-                thickness = 1.dp,
-                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.7f)
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp),
+                thickness = 0.5.dp,
+                color = portfolioSurfaceVariantColor
             )
         }
     }

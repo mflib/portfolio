@@ -88,6 +88,16 @@ private val darkScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
+val AccessibleColorScheme = lightColorScheme(
+    primary = portfolioPrimaryColor,
+    primaryContainer = portfolioPrimaryLightColor,
+    background = portfolioBackgroundColor,
+    surface = portfolioSurfaceColor,
+    surfaceVariant = portfolioSurfaceVariantColor,
+    onSurface = portfolioOnSurfaceColor,
+    onSurfaceVariant = portfolioOnSurfaceVariantColor,
+)
+
 @Immutable
 data class ColorFamily(
     val color: Color, val onColor: Color, val colorContainer: Color, val onColorContainer: Color
