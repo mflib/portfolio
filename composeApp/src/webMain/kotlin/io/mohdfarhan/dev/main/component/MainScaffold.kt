@@ -38,10 +38,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.mohdfarhan.dev.main.enums.Tabs
+import io.mohdfarhan.dev.main.screen.tabs.ExpTab
+import io.mohdfarhan.dev.main.screen.tabs.ExperienceTab
 import io.mohdfarhan.dev.main.screen.tabs.HomeTab
+import io.mohdfarhan.dev.main.screen.tabs.SkillTab
 import io.mohdfarhan.dev.theme.portfolioBackgroundColor
 import io.mohdfarhan.dev.theme.portfolioNeonGlow
-import io.mohdfarhan.dev.theme.portfolioOnSurfaceColor
 import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor
 import io.mohdfarhan.dev.theme.portfolioPrimaryColor
 import io.mohdfarhan.dev.theme.portfolioSurfaceVariantColor
@@ -65,26 +67,35 @@ fun MainScaffold(
                 selectedTabIndex.value = index
             }
         }
-    }, floatingActionButton = {}, bottomBar = {}){
-        paddingValues ->
-            Box(
-                modifier = Modifier
-                    .padding(paddingValues = paddingValues)
-                    .fillMaxSize()
-                    .background(color = portfolioBackgroundColor)
-            ) {
-                when (Tabs.entries[selectedTabIndex.value]) {
-                    Tabs.Home -> {
-                        HomeTab()
+    }, floatingActionButton = {}, bottomBar = {}) { paddingValues ->
+        Box(
+            modifier = Modifier.padding(paddingValues).fillMaxSize()
+                .background(portfolioBackgroundColor)
+        ) {
+            Column(modifier = Modifier.fillMaxSize()) {
+                Box(
+                    modifier = Modifier.weight(1f).fillMaxWidth()
+                ) {
+                    when (Tabs.entries[selectedTabIndex.value]) {
+                        Tabs.Home -> {
+                            HomeTab()
+                        }
+
+                        Tabs.Skills -> {
+                            SkillTab()
+                        }
+
+                        Tabs.Projects -> {}
+                        Tabs.Experience -> {
+                            ExpTab()
+                        }
+                        Tabs.OpenSource -> {}
+                        Tabs.Contact -> {}
+                        Tabs.Resume -> {}
                     }
-                    Tabs.Skills -> {}
-                    Tabs.Projects -> {}
-                    Tabs.Experience -> {}
-                    Tabs.OpenSource -> {}
-                    Tabs.Contact -> {}
-                    Tabs.Resume -> {}
                 }
             }
+        }
     }
 }
 
