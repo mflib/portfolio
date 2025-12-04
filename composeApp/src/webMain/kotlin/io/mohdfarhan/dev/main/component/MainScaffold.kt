@@ -42,6 +42,7 @@ import io.mohdfarhan.dev.main.screen.tabs.ExpTab
 import io.mohdfarhan.dev.main.screen.tabs.ExperienceTab
 import io.mohdfarhan.dev.main.screen.tabs.HomeTab
 import io.mohdfarhan.dev.main.screen.tabs.SkillTab
+import io.mohdfarhan.dev.main.screen.tabs.TimeLineTab
 import io.mohdfarhan.dev.theme.portfolioBackgroundColor
 import io.mohdfarhan.dev.theme.portfolioNeonGlow
 import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor

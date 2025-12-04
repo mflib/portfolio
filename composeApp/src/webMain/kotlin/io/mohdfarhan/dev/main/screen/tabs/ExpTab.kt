@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -20,21 +21,23 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Cyan
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor
 import io.mohdfarhan.dev.theme.portfolioPrimaryColor
+import io.mohdfarhan.dev.theme.portfolioSurfaceVariantColor
 
 
 @Immutable  // Best practice for Compose – improves performance
@@ -123,43 +126,153 @@ fun ExpTab() {
     }
 }
 
+data class CircleParameters(
+    val radius: Dp, val backgroundColor: Color
+)
+
+object CircleParametersDefaults {
+    private val defaultCircleRadius = 12.dp
+    fun circleParameters(
+        radius: Dp = defaultCircleRadius, backgroundColor: Color = Cyan
+    ) = CircleParameters(radius, backgroundColor)
+}
+
+data class LineParameters(
+    val strokeWidth: Dp, val brush: Brush
+)
+
+object LineParametersDefaults {
+
+    private val defaultStrokeWidth = 3.dp
+
+    fun linearGradient(
+        strokeWidth: Dp = 3.dp,
+        startColor: Color,
+        endColor: Color,
+        startY: Float = 0.0f,
+        endY: Float = Float.POSITIVE_INFINITY
+    ): LineParameters {
+        val brush = Brush.verticalGradient(
+            colors = listOf(startColor, endColor), startY = startY, endY = endY
+        )
+        return LineParameters(strokeWidth, brush)
+    }
+}
+
 @Composable
 private fun CareerTimeline(experiences: List<Experience>) {
     Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.TopCenter
+        modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            val circleParameters = CircleParametersDefaults.circleParameters()
+            val lineParameters = LineParametersDefaults.linearGradient(
+                startColor = portfolioPrimaryColor,
+                endColor = portfolioSurfaceVariantColor
+            )
             experiences.forEach { experience ->
-                var referenceHeight by remember { mutableStateOf(0) }
                 Row(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalAlignment = Alignment.Top,
-                    horizontalArrangement = Arrangement.spacedBy(24.dp)
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-//                    TimelineDateAndCompanyCard(experience, textAlign = TextAlign.End)
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        TimelineDot()
-                        /*VerticalDivider(
-                            thickness = 4.dp,
-                            color = portfolioSurfaceColor,
-                            modifier = Modifier.height(with(LocalDensity.current) { referenceHeight.toDp() })
-                        )*/
+
+                    // LEFT CONTENT
+                    TimelineDateAndCompanyCard(experience, TextAlign.End)
+
+                    // CIRCLE
+                    Box(
+                        modifier = Modifier.size(circleParameters.radius * 2)     // diameter
+                            .drawBehind {
+                                val circleRadiusInPx = circleParameters.radius.toPx()
+                                drawCircle(
+                                    color = circleParameters.backgroundColor,
+                                    radius = circleParameters.radius.toPx(),
+                                    center = Offset(
+                                        circleParameters.radius.toPx(),
+                                        circleParameters.radius.toPx()
+                                    )
+                                )
+                                lineParameters?.let {
+                                    drawLine(
+                                        brush = lineParameters.brush,
+                                        start = Offset(x = circleRadiusInPx, y = circleRadiusInPx * 2),
+                                        end = Offset(x = circleRadiusInPx, y = this.size.height),
+                                        strokeWidth = lineParameters.strokeWidth.toPx()
+                                    )
+                                }
+                            }
+                    )
+
+                    // RIGHT CONTENT
+                   TimelineCard(experience, TextAlign.End, onMeasuredHeight = {})
+
+                }/*  Row(
+                    modifier = Modifier.fillMaxWidth().wrapContentHeight(),
+                    verticalAlignment = Alignment.Top,
+                    horizontalArrangement = Arrangement.Center
+                )
+                {
+                    Box(modifier = Modifier.fillMaxWidth().wrapContentHeight()) {
+                        Column(
+                            modifier = Modifier.align(Alignment.TopCenter)
+                        ) {
+                            TimelineDot()*//*VerticalDivider(
+                                thickness = 4.dp,
+                                color = portfolioOnSurfaceColor,
+                                modifier = Modifier.height(with(LocalDensity.current) { referenceHeight.toDp() })
+                            )*//*
+                        }
+
+                        Column(
+                            modifier = Modifier.wrapContentSize().align(Alignment.TopCenter)
+                        ) {
+                            Text(
+                                text = "${experience.startDate} - ${experience.endDate}",
+                                color = Color(0xFFFFD700),
+                                style = MaterialTheme.typography.labelLarge,
+                                modifier = Modifier.padding(bottom = 12.dp)
+                            )
+                            Text(
+                                text = experience.role,
+                                style = MaterialTheme.typography.titleLarge,
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold,
+                            )
+                            Text(
+                                text = experience.company,
+                                style = MaterialTheme.typography.titleMedium,
+                                color = Color(0xFFFFD700),
+                                modifier = Modifier.padding(top = 6.dp)
+                            )
+                        }
+                        Card(
+                            modifier = Modifier.widthIn(max = 420.dp)
+                                .wrapContentHeight()
+                                .padding(horizontal = 16.dp)
+                                .onSizeChanged { size ->
+//                                    onMeasuredHeight(size)
+                                }.align(Alignment.TopCenter),
+                            colors = CardDefaults.cardColors(containerColor = Color(0xFF16213E)),
+                            shape = RoundedCornerShape(20.dp),
+                            elevation = CardDefaults.cardElevation(16.dp)
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(28.dp)
+                            ) {
+                                Text(
+                                    text = "• ${experience.responsibilities}",
+                                    color = Color(0xFFDDDDDD),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    lineHeight = 28.sp,
+                                    modifier = Modifier.padding(vertical = 3.dp)
+                                )
+                            }
+                        }
                     }
-//                    TimelineDateAndCompanyCard(experience, textAlign = TextAlign.End)
-                    /*TimelineCard(
-                        experience, textAlign = TextAlign.Center
-                    ) { intSize ->
-                        referenceHeight = intSize.height
-                    }*/
-                }
+                }*/
             }
         }
     }
@@ -167,7 +280,10 @@ private fun CareerTimeline(experiences: List<Experience>) {
 
 @Composable
 private fun TimelineDateAndCompanyCard(experience: Experience, textAlign: TextAlign) {
-    Column(modifier = Modifier.padding(28.dp)) {
+    Column(
+        modifier = Modifier.size(height = 250.dp, width = 250.dp).padding(horizontal = 16.dp),
+        horizontalAlignment = Alignment.End
+    ) {
         // Date badge
         Text(
             text = "${experience.startDate} - ${experience.endDate}",
@@ -197,9 +313,9 @@ private fun TimelineCard(
     experience: Experience, textAlign: TextAlign, onMeasuredHeight: (IntSize) -> Unit
 ) {
     Card(
-        modifier = Modifier.widthIn(max = 420.dp).padding(horizontal = 16.dp)
+        modifier = Modifier.size(height = 250.dp, width = 250.dp).padding(horizontal = 16.dp)
             .onSizeChanged { size ->
-//                onMeasuredHeight(size)
+                onMeasuredHeight(size)
             },
         colors = CardDefaults.cardColors(containerColor = Color(0xFF16213E)),
         shape = RoundedCornerShape(20.dp),
@@ -238,3 +354,31 @@ private fun TimelineDot(
         )
     }
 }
+
+/*
+* Box(modifier = Modifier.weight(1F)) {
+                        TimelineDateAndCompanyCard(experience, textAlign = TextAlign.End)
+                    }
+                    Box(modifier = Modifier.weight(0.1F)) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center
+                        ) {
+                            TimelineDot()
+                            VerticalDivider(
+                                thickness = 4.dp,
+                                color = portfolioOnSurfaceColor,
+                                modifier = Modifier.height(with(LocalDensity.current) { referenceHeight.toDp() })
+                            )
+                        }
+                    }
+//                    TimelineDateAndCompanyCard(experience, textAlign = TextAlign.End)
+                    Box(modifier = Modifier.weight(1F)) {
+                        TimelineCard(
+                            experience, textAlign = TextAlign.Center
+                        ) { intSize ->
+                            referenceHeight = intSize.height
+                        }
+                    }
+*
+* */
