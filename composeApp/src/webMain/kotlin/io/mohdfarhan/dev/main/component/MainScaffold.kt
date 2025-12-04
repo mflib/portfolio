@@ -39,7 +39,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.mohdfarhan.dev.main.enums.Tabs
 import io.mohdfarhan.dev.main.screen.tabs.ExpTab
-import io.mohdfarhan.dev.main.screen.tabs.ExperienceTab
+import io.mohdfarhan.dev.main.screen.tabs.ExperienceTimelineScreen
 import io.mohdfarhan.dev.main.screen.tabs.HomeTab
 import io.mohdfarhan.dev.main.screen.tabs.SkillTab
 import io.mohdfarhan.dev.main.screen.tabs.TimeLineTab
@@ -88,7 +88,7 @@ fun MainScaffold(
 
                         Tabs.Projects -> {}
                         Tabs.Experience -> {
-                            ExpTab()
+                            ExperienceTimelineScreen()
                         }
                         Tabs.OpenSource -> {}
                         Tabs.Contact -> {}

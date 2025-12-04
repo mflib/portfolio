@@ -41,7 +41,7 @@ import io.mohdfarhan.dev.theme.portfolioSurfaceVariantColor
 
 
 @Immutable  // Best practice for Compose – improves performance
-data class Experience(
+data class ExperienceT(
     val company: String,
     val role: String,
     val startDate: String,        // e.g., "Jan 2021" or "2021"
@@ -61,34 +61,34 @@ data class Experience(
 @Composable
 fun ExpTab() {
     val experiences = listOf(
-        Experience(
+        ExperienceT(
             "Stellar Solutions Inc.", "Senior Software Engineer", "2021", "Present", listOf(
                 "Led the development of a next-generation decentralized finance platform.",
                 "Engineered and optimized smart contracts, resulting in a 40% reduction in gas fees.",
                 "Mentored a team of junior developers."
             )
-        ), Experience(
+        ), ExperienceT(
             "Quantum Dynamics Corp.", "Mid-Level Software Engineer", "2018", "2021", listOf(
                 "Developed and maintained a scalable microservices architecture for a high-traffic e-commerce platform.",
                 "Implemented CI/CD pipelines, improving deployment frequency by 200%."
             )
-        ), Experience(
+        ), ExperienceT(
             "Nebula Systems", "Junior Software Developer", "2016", "2018", listOf(
                 "Contributed to the front-end development of the company’s flagship SaaS product using modern JavaScript frameworks.",
                 "Collaborated with the UI/UX team to translate design mockups into responsive, interactive web pages."
             )
-        ), Experience(
+        ), ExperienceT(
             "Stellar Solutions Inc.", "Senior Software Engineer", "2021", "Present", listOf(
                 "Led the development of a next-generation decentralized finance platform.",
                 "Engineered and optimized smart contracts, resulting in a 40% reduction in gas fees.",
                 "Mentored a team of junior developers."
             )
-        ), Experience(
+        ), ExperienceT(
             "Quantum Dynamics Corp.", "Mid-Level Software Engineer", "2018", "2021", listOf(
                 "Developed and maintained a scalable microservices architecture for a high-traffic e-commerce platform.",
                 "Implemented CI/CD pipelines, improving deployment frequency by 200%."
             )
-        ), Experience(
+        ), ExperienceT(
             "Nebula Systems", "Junior Software Developer", "2016", "2018", listOf(
                 "Contributed to the front-end development of the company’s flagship SaaS product using modern JavaScript frameworks.",
                 "Collaborated with the UI/UX team to translate design mockups into responsive, interactive web pages."
@@ -160,7 +160,7 @@ object LineParametersDefaults {
 }
 
 @Composable
-private fun CareerTimeline(experiences: List<Experience>) {
+private fun CareerTimeline(experiences: List<ExperienceT>) {
     Box(
         modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter
     ) {
@@ -174,13 +174,13 @@ private fun CareerTimeline(experiences: List<Experience>) {
                 startColor = portfolioPrimaryColor,
                 endColor = portfolioSurfaceVariantColor
             )
-            experiences.forEach { experience ->
+            experiences.forEach { ExperienceT ->
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
 
                     // LEFT CONTENT
-                    TimelineDateAndCompanyCard(experience, TextAlign.End)
+                    TimelineDateAndCompanyCard(ExperienceT, TextAlign.End)
 
                     // CIRCLE
                     Box(
@@ -207,7 +207,7 @@ private fun CareerTimeline(experiences: List<Experience>) {
                     )
 
                     // RIGHT CONTENT
-                   TimelineCard(experience, TextAlign.End, onMeasuredHeight = {})
+                   TimelineCard(ExperienceT, TextAlign.End, onMeasuredHeight = {})
 
                 }/*  Row(
                     modifier = Modifier.fillMaxWidth().wrapContentHeight(),
@@ -230,19 +230,19 @@ private fun CareerTimeline(experiences: List<Experience>) {
                             modifier = Modifier.wrapContentSize().align(Alignment.TopCenter)
                         ) {
                             Text(
-                                text = "${experience.startDate} - ${experience.endDate}",
+                                text = "${ExperienceT.startDate} - ${ExperienceT.endDate}",
                                 color = Color(0xFFFFD700),
                                 style = MaterialTheme.typography.labelLarge,
                                 modifier = Modifier.padding(bottom = 12.dp)
                             )
                             Text(
-                                text = experience.role,
+                                text = ExperienceT.role,
                                 style = MaterialTheme.typography.titleLarge,
                                 color = Color.White,
                                 fontWeight = FontWeight.Bold,
                             )
                             Text(
-                                text = experience.company,
+                                text = ExperienceT.company,
                                 style = MaterialTheme.typography.titleMedium,
                                 color = Color(0xFFFFD700),
                                 modifier = Modifier.padding(top = 6.dp)
@@ -263,7 +263,7 @@ private fun CareerTimeline(experiences: List<Experience>) {
                                 modifier = Modifier.padding(28.dp)
                             ) {
                                 Text(
-                                    text = "• ${experience.responsibilities}",
+                                    text = "• ${ExperienceT.responsibilities}",
                                     color = Color(0xFFDDDDDD),
                                     style = MaterialTheme.typography.bodyMedium,
                                     lineHeight = 28.sp,
@@ -279,27 +279,27 @@ private fun CareerTimeline(experiences: List<Experience>) {
 }
 
 @Composable
-private fun TimelineDateAndCompanyCard(experience: Experience, textAlign: TextAlign) {
+private fun TimelineDateAndCompanyCard(ExperienceT: ExperienceT, textAlign: TextAlign) {
     Column(
         modifier = Modifier.size(height = 250.dp, width = 250.dp).padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.End
     ) {
         // Date badge
         Text(
-            text = "${experience.startDate} - ${experience.endDate}",
+            text = "${ExperienceT.startDate} - ${ExperienceT.endDate}",
             color = Color(0xFFFFD700),
             style = MaterialTheme.typography.labelLarge,
             modifier = Modifier.padding(bottom = 12.dp)
         )
         Text(
-            text = experience.role,
+            text = ExperienceT.role,
             style = MaterialTheme.typography.titleLarge,
             color = Color.White,
             fontWeight = FontWeight.Bold,
             textAlign = textAlign
         )
         Text(
-            text = experience.company,
+            text = ExperienceT.company,
             style = MaterialTheme.typography.titleMedium,
             color = Color(0xFFFFD700),
             modifier = Modifier.padding(top = 6.dp),
@@ -310,7 +310,7 @@ private fun TimelineDateAndCompanyCard(experience: Experience, textAlign: TextAl
 
 @Composable
 private fun TimelineCard(
-    experience: Experience, textAlign: TextAlign, onMeasuredHeight: (IntSize) -> Unit
+    ExperienceT: ExperienceT, textAlign: TextAlign, onMeasuredHeight: (IntSize) -> Unit
 ) {
     Card(
         modifier = Modifier.size(height = 250.dp, width = 250.dp).padding(horizontal = 16.dp)
@@ -326,9 +326,9 @@ private fun TimelineCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
-//            experience.responsibilities.forEach { duty ->
+//            ExperienceT.responsibilities.forEach { duty ->
             Text(
-                text = "• ${experience.responsibilities}",
+                text = "• ${ExperienceT.responsibilities}",
                 color = Color(0xFFDDDDDD),
                 style = MaterialTheme.typography.bodyMedium,
                 lineHeight = 28.sp,
@@ -357,7 +357,7 @@ private fun TimelineDot(
 
 /*
 * Box(modifier = Modifier.weight(1F)) {
-                        TimelineDateAndCompanyCard(experience, textAlign = TextAlign.End)
+                        TimelineDateAndCompanyCard(ExperienceT, textAlign = TextAlign.End)
                     }
                     Box(modifier = Modifier.weight(0.1F)) {
                         Column(
@@ -372,10 +372,10 @@ private fun TimelineDot(
                             )
                         }
                     }
-//                    TimelineDateAndCompanyCard(experience, textAlign = TextAlign.End)
+//                    TimelineDateAndCompanyCard(ExperienceT, textAlign = TextAlign.End)
                     Box(modifier = Modifier.weight(1F)) {
                         TimelineCard(
-                            experience, textAlign = TextAlign.Center
+                            ExperienceT, textAlign = TextAlign.Center
                         ) { intSize ->
                             referenceHeight = intSize.height
                         }
