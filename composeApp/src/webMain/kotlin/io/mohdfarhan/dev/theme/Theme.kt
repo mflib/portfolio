@@ -106,7 +106,7 @@ data class ColorFamily(
 
 @Composable
 fun PortfolioTheme(
-    darkTheme: Boolean = false, content: @Composable() () -> Unit
+    darkTheme: Boolean = true, content: @Composable() () -> Unit
 ) {
     val colorScheme = when (darkTheme) {
         true -> darkScheme

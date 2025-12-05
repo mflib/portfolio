@@ -15,8 +15,9 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,35 +29,31 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.input.pointer.PointerEventType
 import androidx.compose.ui.input.pointer.onPointerEvent
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.mohdfarhan.dev.resources.Res
-import io.mohdfarhan.dev.resources.browser_code
-import io.mohdfarhan.dev.resources.cloud
-import io.mohdfarhan.dev.resources.database
-import io.mohdfarhan.dev.resources.iphone
-import io.mohdfarhan.dev.resources.learn
-import io.mohdfarhan.dev.resources.merge
+import coil3.compose.AsyncImage
+import io.mohdfarhan.dev.data.Skill
+import io.mohdfarhan.dev.data.SkillItem
 import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor
 import io.mohdfarhan.dev.theme.portfolioPrimaryColor
 import io.mohdfarhan.dev.theme.portfolioSurfaceColor
 import io.mohdfarhan.dev.theme.portfolioSurfaceVariantColor
-import org.jetbrains.compose.resources.DrawableResource
-import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun SkillTab() {
+fun SkillTab(skill: Skill) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(vertical = 48.dp, horizontal = 48.dp),
+        modifier = Modifier.fillMaxSize()
+            .padding(vertical = 48.dp, horizontal = 48.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
         Text(
-            text = "My Technical Arsenal", style = MaterialTheme.typography.bodyLarge.copy(
+            text = skill.title, style = MaterialTheme.typography.bodyLarge.copy(
                 fontSize = 36.sp,
                 lineHeight = 24.sp,
                 fontWeight = FontWeight.Black,
@@ -66,7 +63,7 @@ fun SkillTab() {
         Spacer(Modifier.height(12.dp))
         Text(
             modifier = Modifier.widthIn(max = 768.dp),
-            text = "A collection of technologies I'm proficient in, constantly learning and adapting to the ever-evolving digital landscape. From front-end frameworks to back-end languages, these are the tools I use to build robust and beautiful applications.",
+            text = skill.subtitle,
             style = MaterialTheme.typography.bodySmall.copy(
                 fontSize = 18.sp,
                 lineHeight = 24.sp,
@@ -76,25 +73,15 @@ fun SkillTab() {
             )
         )
         Spacer(Modifier.height(12.dp))
-        SkillsGrid()
+        SkillsGrid(skill)
     }
 }
 
-data class SkillItem(
-    val icon: DrawableResource, val title: String, val subtitle: String
-)
 
 @Composable
-fun SkillsGrid() {
+fun SkillsGrid(skill: Skill) {
     val columns = 3
-    val skills = listOf(
-        SkillItem(Res.drawable.iphone, "Mobile", "Android, KMP"),
-        SkillItem(Res.drawable.browser_code, "Backend", "Java, Ktor"),
-        SkillItem(Res.drawable.database, "Database", "Postgresql, MongoDB, DynamoDB"),
-        SkillItem(Res.drawable.cloud, "DevOps", "Docker, Docker-Compose"),
-        SkillItem(Res.drawable.merge, "Tooling", "Github, Gitlab"),
-        SkillItem(Res.drawable.learn, "Leaning", "AI, ML"),
-    )
+    val skills =skill.items
     LazyVerticalGrid(
         columns = GridCells.Fixed(columns),
         modifier = Modifier.fillMaxWidth().padding(24.dp),
@@ -126,10 +113,10 @@ fun SkillCard(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(Modifier.height(8.dp))
-        Icon(
+        AsyncImage(
+            colorFilter = ColorFilter.tint(portfolioPrimaryColor),
             modifier = Modifier.size(32.dp),
-            painter = painterResource(skillItem.icon),
-            tint = portfolioPrimaryColor,
+            model = "${skillItem.icon}",
             contentDescription = skillItem.title
         )
         Spacer(Modifier.height(8.dp))
@@ -137,13 +124,13 @@ fun SkillCard(
             text = skillItem.title, style = MaterialTheme.typography.bodySmall.copy(
                 fontSize = 20.sp,
                 lineHeight = 24.sp,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.Medium,
                 color = Color.White,
             )
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            text = skillItem.subtitle, style = MaterialTheme.typography.bodySmall.copy(
+            text = skillItem.description, style = MaterialTheme.typography.bodySmall.copy(
                 fontSize = 16.sp,
                 lineHeight = 24.sp,
                 fontWeight = FontWeight.Normal,

@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "name": "Hi, I'm Mohammed\nFarhan",
+    "title": "Software Developer - Mobile & Backend",
+    "aboutMe": "Accomplished Software Developer experienced in building high-performance mobile applications and robust backend systems. Skilled in designing and developing scalable, cloud-ready solutions using modern architectures and best practices. Proven ability to deliver reliable, user-focused products across the full development lifecycle, with deep expertise in mobile app development, API design, distributed systems, and enterprise-grade backend services. Known for driving innovation, improving system efficiency, and collaborating effectively in agile environments to deliver impactful, long-lasting technology solutions."
+  },
+  "skill": {
+    "title": "My Technical Arsenal",
+    "subtitle": "A collection of technologies I'm proficient in, constantly learning and adapting to the ever-evolving digital landscape. From front-end frameworks to back-end languages, these are the tools I use to build robust and beautiful applications.",
+    "items":[
+      {
+        "icon": "https://pub-c5c7a9b950b54632a642c53c88b22741.r2.dev/iphone.png",
+        "title": "Mobile",
+        "description": "Android, KMP"
+      },
+      {
+        "icon": "https://pub-c5c7a9b950b54632a642c53c88b22741.r2.dev/browser-code.png",
+        "title": "Backend",
+        "description": "Java, Ktor"
+      },
+      {
+        "icon": "https://pub-c5c7a9b950b54632a642c53c88b22741.r2.dev/database.png",
+        "title": "Database",
+        "description": "Postgresql, MongoDB, DynamoDB"
+      },
+      {
+        "icon": "https://pub-c5c7a9b950b54632a642c53c88b22741.r2.dev/cloud.png",
+        "title": "Cloud",
+        "description": "AWS"
+      },
+      {
+        "icon": "https://pub-c5c7a9b950b54632a642c53c88b22741.r2.dev/merge.png",
+        "title": "DevOps",
+        "description": "Github, Gitlab, Docker, Docker-Compose"
+      },
+      {
+        "icon": "https://pub-c5c7a9b950b54632a642c53c88b22741.r2.dev/learn.png",
+        "title": "Learning",
+        "description": "AI, ML"
+      }
+    ]
+  },
+  "experience":{
+    "title":"My Professional Journey",
+    "subtitle":"Tracing my career path through impactful roles and innovative\nprojects that shaped my expertise",
+    "items":[
+      {
+        "title": "Software Programmer",
+        "company": "Ministry of Interior, Doha, Qatar.",
+        "period": "JUL.2021 - Present",
+        "description": [
+          "Designed and developed Android applications used by internal teams to support operational workflows and improve process efficiency.",
+          "Evaluated and integrated suitable open-source components from GitHub to improve feature implementation and reduce development time.",
+          "Implemented clean architecture patterns (e.g., MVVM) to ensure maintainability and testability of codebases.",
+          "Maintained existing applications by delivering updates, refactoring legacy components, and improving system stability.",
+          "Performed debugging, profiling, and optimization to enhance app reliability and performance."
+        ],
+        "isRightAligned": false
+      },
+      {
+        "title": "Software Developer",
+        "company": "Selfypage Developers Pvt Ltd, Bengaluru, India.",
+        "period": "DEC.2020 - JUL.2021",
+        "description": [
+          "Served as a core team member involved in designing, architecting, and developing company software applications delivered in a SaaS model.",
+          "Developed backend modules in Java, implementing business rules and workflow logic using Spring Boot.",
+          "Designed and built REST-based microservices using Spring Boot to support scalable and modular application architecture.",
+          "Utilized Java Collections API for efficient handling, processing, and transfer of data across business layers and UI components.",
+          "Implemented data persistence and connectivity with MongoDB using the Morphia Java driver.",
+          "Deployed microservices on AWS EC2 instances and secured service access through AWS API Gateway.",
+          "Developed Android applications as front-end solutions using Kotlin and Jetpack components."
+        ],
+        "isRightAligned": true
+      },
+      {
+        "title": "Software Developer- Backend",
+        "company": "Motocruizer Technologies India Pvt Ltd, Bengaluru, India.",
+        "period": "JUN.2019 - DEC.2020",
+        "description": [
+          "Developed RESTful web services using Spring Boot and a microservices architecture for a mobility product serving over 500K users.",
+          "Leveraged AWS services for deploying, managing, and exposing backend APIs in a scalable environment.",
+          "Integrated an open-source GPS tracking system to monitor, manage, and collect data from IoT-enabled electric cycles.",
+          "Utilized Jenkins to support continuous integration and streamlined build pipelines.",
+          "Resolved bugs and performance issues to enhance overall product stability and user experience."
+        ],
+        "isRightAligned": false
+      },
+      {
+        "title": "Software Engineer- Android",
+        "company": "Capulus Technologies Pvt Ltd, Chickmagaluru, India.",
+        "period": "MAY.2017 - MAY.2019",
+        "description": [
+          "Engineered end-to-end native Android applications using Java and Kotlin.",
+          "Contributed to architectural planning and technical design decisions throughout the project lifecycle.",
+          "Implemented MVP architecture and utilized ORMLite and Room for efficient local data persistence.",
+          "Integrated networking libraries such as Volley and Retrofit for API communication.",
+          "Collaborated with the design team to deliver high-quality UI/UX aligned with product requirements.",
+          "Managed debug and release builds, including preparing and publishing applications to the Google Play Store.",
+          "Integrated Firebase Crashlytics and analytics tools to monitor performance, identify issues, and drive app stability improvements."
+        ],
+        "isRightAligned": true
+      }
+    ]
+  },
+  "openSource":{
+    "title":"Open Source Contribution",
+    "subtitle":"Proud to be a part of the open-source community.\nHere are some of the library and projects i have contributed to.",
+    "items":[
+      {
+        "title": "TopAlerter",
+        "subtitle": "Jetpack compose TopAlerter",
+        "description": "A sleek, customizable alerter for Jetpack Compose with animations, action buttons, progress mode, and full Material 3 theming. Perfect for in-app notifications like success, error, info, or warnings",
+        "stars": 0,
+        "tags": "android-library,jetpack-compose",
+        "githubLink": "https://github.com/mflib/topalerter"
+      }
+    ]
+  },
+  "footer":{
+    "title":"© 2025 Mohammed Farhan — All Rights Reserved",
+    "subtitle":"Based in India"
+  }
+}

@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    kotlin("plugin.serialization") version "2.2.21"
 }
 
 kotlin {
@@ -15,8 +16,13 @@ kotlin {
     
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        browser()
+        browser{
+            commonWebpackConfig {
+                cssSupport {enabled=true}
+            }
+        }
         binaries.executable()
+
     }
 
     sourceSets {
@@ -33,15 +39,14 @@ kotlin {
             implementation(compose.materialIconsExtended)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
-//            implementation(libs.compose.material.icons.extended)
-
-
+            implementation(libs.bundles.ktor.common)
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         jsMain.dependencies {
-//            implementation(libs.compose.material.icons.extended)
         }
         wasmJsMain.dependencies {
-//            implementation(libs.compose.material.icons.extended)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

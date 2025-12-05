@@ -1,5 +1,6 @@
 package io.mohdfarhan.dev.main.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,99 +22,93 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import io.mohdfarhan.dev.data.Footer
 import io.mohdfarhan.dev.resources.Res
 import io.mohdfarhan.dev.resources.instagram
 import io.mohdfarhan.dev.resources.linkedin
-import io.mohdfarhan.dev.resources.twitter
 import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor
+import io.mohdfarhan.dev.theme.portfolioSurfaceColor
 import io.mohdfarhan.dev.theme.portfolioSurfaceVariantColor
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun MainFooter() {
+fun MainFooter(footer: Footer) {
     val uriHandler = LocalUriHandler.current
-    Column(
-        modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(
-            horizontal = 16.dp, vertical = 8.dp
-        )
-    ) {
+    Column(modifier = Modifier.fillMaxWidth().background(color = portfolioSurfaceColor.copy(alpha = 0.5f))) {
         HorizontalDivider(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp),
-            thickness = 0.5.dp,
+            modifier = Modifier
+                .fillMaxWidth(),
+            thickness = 0.6.dp,
             color = portfolioSurfaceVariantColor
         )
-        Row(
-            modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(8.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.Start) {
-                Text(
-                    text = "© 2025 Mohammed Farhan — All Rights Reserved",
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        color = Color.White
-                    )
-                )
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    text = "Based in India", style = MaterialTheme.typography.labelMedium.copy(
-                        color = portfolioOnSurfaceVariantColor
-                    )
-                )
-            }
-            Column(
-                modifier = Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+                .padding(horizontal = 24.dp)
+        )
+        {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(top = 4.dp, bottom =4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(
-                    text = "Built with Compose Multiplatform",
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        color = Color.White
+                // Left Section
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = footer.title,
+                        style = MaterialTheme.typography.titleSmall.copy(color = Color.White)
                     )
-                )
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    text = "Kotlin/Wasm",
-                    style = MaterialTheme.typography.titleSmall.copy(
-                        color = portfolioOnSurfaceVariantColor
-                    ),
-                    textDecoration = TextDecoration.Underline,
-                    modifier = Modifier.clickable {
-                        uriHandler.openUri("https://kotlinlang.org/docs/wasm-overview.html")
-                    })
-            }
+                    Spacer(Modifier.height(2.dp))
+                    Text(
+                        text = footer.subtitle,
+                        style = MaterialTheme.typography.labelSmall.copy(color = portfolioOnSurfaceVariantColor)
+                    )
+                }
 
-            Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.End) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    Icon(
-                        painter = painterResource(Res.drawable.linkedin),
-                        contentDescription = "LinkedIn",
-                        modifier = Modifier.size(32.dp).clickable {
-                            uriHandler.openUri("https://kotlinlang.org/docs/wasm-overview.html")
-
-                        })
-                    Icon(
-                        painter = painterResource(Res.drawable.twitter),
-                        contentDescription = "Twitter",
-                        modifier = Modifier.size(32.dp).clickable {
+                // Middle Section
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Built with Compose Multiplatform",
+                        style = MaterialTheme.typography.titleSmall.copy(color = Color.White)
+                    )
+                    Spacer(Modifier.height(2.dp))
+                    Text(
+                        text = "Kotlin/Wasm",
+                        style = MaterialTheme.typography.labelSmall.copy(color = portfolioOnSurfaceVariantColor),
+                        textDecoration = TextDecoration.Underline,
+                        modifier = Modifier.clickable {
                             uriHandler.openUri("https://kotlinlang.org/docs/wasm-overview.html")
                         }
                     )
-                    Icon(
-                        painter = painterResource(Res.drawable.instagram),
-                        contentDescription = "Instagram",
-                        modifier = Modifier.size(32.dp).clickable {
-                            uriHandler.openUri("https://kotlinlang.org/docs/wasm-overview.html")
-                        })
                 }
-                Spacer(Modifier.height(4.dp))
-                Text(
-                    text = "Credits- Flat Icon", style = MaterialTheme.typography.labelMedium.copy(
-                        color = portfolioOnSurfaceVariantColor
+
+                // Right Section
+                Column(horizontalAlignment = Alignment.End) {
+                    Text(
+                        text = "Connect With Me",
+                        style = MaterialTheme.typography.titleSmall.copy(color = Color.White)
                     )
-                )
+                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Icon(
+                            painter = painterResource(Res.drawable.linkedin),
+                            contentDescription = "LinkedIn",
+                            modifier = Modifier.size(22.dp).clickable {
+                                uriHandler.openUri("https://linkedin.com/in/farhanbaksh")
+                            }
+                        )
+                        Icon(
+                            painter = painterResource(Res.drawable.instagram),
+                            contentDescription = "Instagram",
+                            modifier = Modifier.size(22.dp).clickable {
+                                uriHandler.openUri("https://instagram.com/mf_mohammed_farhan")
+                            }
+                        )
+                    }
+                }
             }
         }
     }

@@ -18,8 +18,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.Button
@@ -41,6 +43,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import io.mohdfarhan.dev.data.Hero
 import io.mohdfarhan.dev.theme.portfolioBackgroundColor
 import io.mohdfarhan.dev.theme.portfolioOnSurfaceVariantColor
 import io.mohdfarhan.dev.theme.portfolioPrimaryColor
@@ -49,17 +52,18 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun HomeTab() {
+fun HomeTab(hero: Hero) {
     Row(
         modifier = Modifier.fillMaxSize()
             .padding(vertical = 48.dp, horizontal = 48.dp),
         verticalAlignment = Alignment.CenterVertically
-    ) {
+    )
+    {
         Column(
             modifier = Modifier.weight(0.7f)
         ) {
             Text(
-                text = "Hi, I'm John\nDoe", style = MaterialTheme.typography.bodyLarge.copy(
+                text = hero.name, style = MaterialTheme.typography.bodyLarge.copy(
                     fontSize = 72.sp,
                     lineHeight = 82.sp,
                     fontWeight = FontWeight.Black,
@@ -68,7 +72,7 @@ fun HomeTab() {
             )
             Spacer(Modifier.height(12.dp))
             Text(
-                text = "Software Developer- Mobile & Backend",
+                text = hero.title,
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = 25.sp,
                     fontWeight = FontWeight.SemiBold,
@@ -79,7 +83,7 @@ fun HomeTab() {
             Text(
                 modifier = Modifier.fillMaxWidth()
                     .padding(start = 0.dp, top = 0.dp, bottom = 0.dp, end = 50.dp),
-                text = "Accomplished Software Developer experienced in building high-performance mobile applications and robust backend systems. Skilled in designing and developing scalable, cloud-ready solutions using modern architectures and best practices. Proven ability to deliver reliable, user-focused products across the full development lifecycle, with deep expertise in mobile app development, API design, distributed systems, and enterprise-grade backend services. Known for driving innovation, improving system efficiency, and collaborating effectively in agile environments to deliver impactful, long-lasting technology solutions.",
+                text = hero.aboutMe,
                 style = MaterialTheme.typography.bodySmall.copy(
                     fontSize = 18.sp,
                     lineHeight = 24.sp,
@@ -89,8 +93,7 @@ fun HomeTab() {
                 )
             )
             Spacer(Modifier.height(16.dp))
-            MyWorkButton(onClick = {})
-
+//            MyWorkButton(onClick = {})
         }
         Spacer(modifier = Modifier.width(24.dp))
         Box(
