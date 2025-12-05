@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.coil-kt.coil3:coil-core:jsCommonMain:3.3.0" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="io.coil-kt.coil3" artifactId="coil-core" version="3.3.0" baseVersion="3.3.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/io.coil-kt.coil3-coil-core-3.3.0-jsCommonMain-DM0FDg.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-core/3.3.0/b86203ff25f42c4a2dd1b049e0eb263bf8325ff8/coil-core-3.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

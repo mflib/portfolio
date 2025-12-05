@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.compose.animation:animation:nonAndroidMain:1.9.1" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.compose.animation" artifactId="animation" version="1.9.1" baseVersion="1.9.1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.compose.animation-animation-1.9.1-nonAndroidMain-pxVCVw.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.animation/animation/1.9.1/f0767b675e4b1001aa8e7ad5cd50ad555c59d0c/animation-1.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

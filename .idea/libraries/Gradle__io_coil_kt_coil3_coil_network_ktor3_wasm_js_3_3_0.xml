@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.coil-kt.coil3:coil-network-ktor3-wasm-js:3.3.0" type="kotlin.wasm.js" external-system-id="GRADLE">
+    <properties groupId="io.coil-kt.coil3" artifactId="coil-network-ktor3-wasm-js" version="3.3.0" baseVersion="3.3.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-network-ktor3-wasm-js/3.3.0/593cd05ba752c8dbc9dd1f4c1d682c5a73af6cf2/coil-network-ktor3-wasm-js-3.3.0.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-network-ktor3-wasm-js/3.3.0/b79512f34e5c783f49edf6b3edf121095ea7fc52/coil-network-ktor3-wasm-js-3.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

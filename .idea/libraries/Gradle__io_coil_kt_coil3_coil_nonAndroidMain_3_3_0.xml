@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.coil-kt.coil3:coil:nonAndroidMain:3.3.0" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="io.coil-kt.coil3" artifactId="coil" version="3.3.0" baseVersion="3.3.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/io.coil-kt.coil3-coil-3.3.0-nonAndroidMain-rFLV_w.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil/3.3.0/c2af7936d411323b170a0cffc5ce766e27d9a2c2/coil-3.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

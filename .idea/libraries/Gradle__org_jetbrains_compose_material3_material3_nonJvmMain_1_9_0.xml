@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.compose.material3:material3:nonJvmMain:1.9.0" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.compose.material3" artifactId="material3" version="1.9.0" baseVersion="1.9.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.compose.material3-material3-1.9.0-nonJvmMain-PrP0Cw.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3/1.9.0/fdb578239634c4afdc29bf4f8dfe5bca02ea8814/material3-1.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

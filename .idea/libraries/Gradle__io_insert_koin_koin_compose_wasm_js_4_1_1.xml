@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.insert-koin:koin-compose-wasm-js:4.1.1" type="kotlin.wasm.js" external-system-id="GRADLE">
+    <properties groupId="io.insert-koin" artifactId="koin-compose-wasm-js" version="4.1.1" baseVersion="4.1.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-compose-wasm-js/4.1.1/e00b55a4c6553e1fe5892acff4d570e5e7bd734a/koin-compose-wasm-js-4.1.1.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-compose-wasm-js/4.1.1/47d02b51532bc4e54cc774413e7b2efc93b0ecfa/koin-compose-wasm-js-4.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

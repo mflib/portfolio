@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.lifecycle:lifecycle-runtime-compose:nonAndroidMain:2.9.4" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="androidx.lifecycle" artifactId="lifecycle-runtime-compose" version="2.9.4" baseVersion="2.9.4" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/androidx.lifecycle-lifecycle-runtime-compose-2.9.4-nonAndroidMain-Jyns3Q.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-runtime-compose/2.9.4/ba994efab7571bf52b5a8369f48ef406a1dd1c0e/lifecycle-runtime-compose-2.9.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

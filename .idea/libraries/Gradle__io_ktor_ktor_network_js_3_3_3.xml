@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-network-js:3.3.3" type="kotlin.js" external-system-id="GRADLE">
+    <properties groupId="io.ktor" artifactId="ktor-network-js" version="3.3.3" baseVersion="3.3.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-network-js/3.3.3/33ffcee8fa17b3e5db74454575520eb9c1cd82c9/ktor-network-js-3.3.3.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-network-js/3.3.3/89251aeba7c311bbed2cdeb424445a5ad408e40/ktor-network-js-3.3.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

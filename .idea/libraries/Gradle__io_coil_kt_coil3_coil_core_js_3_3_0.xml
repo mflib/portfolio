@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.coil-kt.coil3:coil-core-js:3.3.0" type="kotlin.js" external-system-id="GRADLE">
+    <properties groupId="io.coil-kt.coil3" artifactId="coil-core-js" version="3.3.0" baseVersion="3.3.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-core-js/3.3.0/4fa9cc380df3e229b96e7f3b9ed96be12517b2bd/coil-core-js-3.3.0.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-core-js/3.3.0/e9a9753bab3537b9d113e5c9e4bdaee9d1e7a097/coil-core-js-3.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

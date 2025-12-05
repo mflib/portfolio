@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.lifecycle:lifecycle-runtime-compose-js:2.9.4" type="kotlin.js" external-system-id="GRADLE">
+    <properties groupId="androidx.lifecycle" artifactId="lifecycle-runtime-compose-js" version="2.9.4" baseVersion="2.9.4" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-runtime-compose-js/2.9.4/9b76c867fc39f1b2e05ded76dbccbde0ffe4eab/lifecycle-runtime-compose-js-2.9.4.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-runtime-compose-js/2.9.4/1d84634304672d7110624ce3a98966cce08e707/lifecycle-runtime-compose-js-2.9.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

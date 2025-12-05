@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CMPPortfolio.iml" filepath="$PROJECT_DIR$/.idea/modules/CMPPortfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.commonMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.wasmJsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.wasmJsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.wasmJsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.wasmJsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.webMain.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.webMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.webTest.iml" filepath="$PROJECT_DIR$/.idea/modules/composeApp/CMPPortfolio.composeApp.webTest.iml" />
+    </modules>
+  </component>
+</project>

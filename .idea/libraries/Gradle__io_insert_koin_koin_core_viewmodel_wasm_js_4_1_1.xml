@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.insert-koin:koin-core-viewmodel-wasm-js:4.1.1" type="kotlin.wasm.js" external-system-id="GRADLE">
+    <properties groupId="io.insert-koin" artifactId="koin-core-viewmodel-wasm-js" version="4.1.1" baseVersion="4.1.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-core-viewmodel-wasm-js/4.1.1/e4c829327aa5f9ceb70a2b4103bc631d1f1a2424/koin-core-viewmodel-wasm-js-4.1.1.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-core-viewmodel-wasm-js/4.1.1/9a1541d355631ccc75592348fe73e8b180c66a2f/koin-core-viewmodel-wasm-js-4.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

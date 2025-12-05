@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-cio-js:3.3.3" type="kotlin.js" external-system-id="GRADLE">
+    <properties groupId="io.ktor" artifactId="ktor-client-cio-js" version="3.3.3" baseVersion="3.3.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-cio-js/3.3.3/41b1bea37904af319f53081a544dd6902aa63179/ktor-client-cio-js-3.3.3.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-cio-js/3.3.3/4336d216403e03436bf42f99ab1b452e74d00e61/ktor-client-cio-js-3.3.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

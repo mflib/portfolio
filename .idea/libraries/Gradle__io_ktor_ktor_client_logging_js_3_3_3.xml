@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-logging-js:3.3.3" type="kotlin.js" external-system-id="GRADLE">
+    <properties groupId="io.ktor" artifactId="ktor-client-logging-js" version="3.3.3" baseVersion="3.3.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-logging-js/3.3.3/ca3fc86a21de4869530a6539e1dcba33034442db/ktor-client-logging-js-3.3.3.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-logging-js/3.3.3/b9724b9122bf8ef01bd64d55f7f3466453e6c58e/ktor-client-logging-js-3.3.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

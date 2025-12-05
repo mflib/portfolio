@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-json-js:3.3.3" type="kotlin.js" external-system-id="GRADLE">
+    <properties groupId="io.ktor" artifactId="ktor-client-json-js" version="3.3.3" baseVersion="3.3.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-js/3.3.3/8be55391cf2a3300f3405f6906fa26bdea063c73/ktor-client-json-js-3.3.3.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-js/3.3.3/b6f4ff2fcf39bf407650edbd48c41210c8d8f4d5/ktor-client-json-js-3.3.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
