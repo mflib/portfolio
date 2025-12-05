@@ -1,0 +1,13 @@
+{
+  "name": "CMPPortfolio-composeApp-test",
+  "version": "0.0.0-unspecified",
+  "main": "CMPPortfolio-composeApp-test.mjs",
+  "devDependencies": {},
+  "dependencies": {
+    "@js-joda/core": "3.2.0",
+    "ws": "8.18.3"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
